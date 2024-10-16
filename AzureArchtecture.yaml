@@ -1,0 +1,33 @@
+Architecture
+  - Master Node:
+      - Container Runtime
+      - etcd:
+          - db, sotre data in key value
+          - store all worker and master node data/information
+      - kube-scheduler:
+          - distribute load across worker node
+          - schedule the node accordingly to the node
+      - kube-apiserver:
+          - Front end of the cluster
+          - expose all k8s api
+          - manages 
+      - kube-controller manager: check if anything goes down and bring them up
+        - Node Controller: if nodes goes down
+        - Replication: maintains required no of replicas of a pod
+        - Endpoint: populates the end point
+         - Servicd Account and Token Controller: create default account and api access for new namspace 
+        - Cloud Control: responsible for cloud specific tasks
+        - Route Controller: for setting up the routes
+        - Service controller: for creating/updating/deleting cloud lb
+  - Worker Node:
+      - Container Runtime: like docker 
+      - kubelet: 
+        - agent runs on worker node
+        - 
+      - kube-proxy:
+        - network proxy
+        - maintains network rules
+        - helps in intra - inter pod communication
+  - Azure CNI:
+  
+  
