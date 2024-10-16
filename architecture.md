@@ -2,7 +2,7 @@
 
 ## Network Diagram
 
-![Network Diagram](images/architectureDiagram.jpg)
+![Network Diagram](images/Kubernetes-cluster-architecture.img)
 
 ## Master Node
 
@@ -39,4 +39,3 @@
   - network proxy
   - maintains network rules
   - helps in intra and inter pod communication
-  
