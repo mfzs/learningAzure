@@ -1,5 +1,11 @@
 # Architecture
 
+## Table of Contents
+
+- Network Diagram
+- Master Node
+- Worker Node
+
 ## Network Diagram
 
 ![Network Diagram](images/Kubernetes-cluster-architecture.img)
