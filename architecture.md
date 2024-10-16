@@ -27,7 +27,7 @@
 
 - **Container Runtime**: e.g., Docker
 - **kubelet:**
-  *agent runs on worker node
+  * agent runs on worker node
   *
 - **kube-proxy:**
     - network proxy
