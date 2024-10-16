@@ -2,7 +2,7 @@
 
 ## Network Diagram
 
-![Local Image](images/architectureDiagram.jpg)
+![Network Diagram](images/architectureDiagram.jpg)
 
 ## Master Node
 
@@ -32,8 +32,11 @@
 - **Container Runtime**: e.g., Docker
 - **kubelet:**
   - agent runs on worker node
-  - 
+  - communicates with the Kubernetes API server to report the status of the node and the pods running on it
+  - interact with the underlying container runtime
+  - monitors health check and restart the pods if needed
 - **kube-proxy:**
   - network proxy
   - maintains network rules
   - helps in intra and inter pod communication
+  
