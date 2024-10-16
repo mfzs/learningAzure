@@ -1,5 +1,9 @@
 # Architecture
 
+## Network Diagram
+
+![Local Image](images/architectureDiagram.jpg)
+
 ## Master Node
 
 - **Container Runtime**
