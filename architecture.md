@@ -1,6 +1,7 @@
 # Architecture
 
 ## Master Node
+
 - **Container Runtime**
 - **etcd**
   - Database; stores data in key-value format
@@ -23,5 +24,12 @@
   - **Service Controller**: Manages cloud load balancers (create/update/delete)
 
 ## Worker Node
+
 - **Container Runtime**: e.g., Docker
-- **k
+- **kubelet:**
+  *agent runs on worker node
+  *
+- **kube-proxy:**
+    - network proxy
+    - maintains network rules
+    - helps in intra - inter pod communication
