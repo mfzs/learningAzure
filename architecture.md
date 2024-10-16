@@ -27,9 +27,9 @@
 
 - **Container Runtime**: e.g., Docker
 - **kubelet:**
-  * agent runs on worker node
-  *
+  - agent runs on worker node
+  - 
 - **kube-proxy:**
-    - network proxy
-    - maintains network rules
-    - helps in intra - inter pod communication
+  - network proxy
+  - maintains network rules
+  - helps in intra and inter pod communication
