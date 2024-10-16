@@ -2,9 +2,9 @@
 
 ## Table of Contents
 
-- Network Diagram
-- Master Node
-- Worker Node
+- [Network Diagram](#network-diagram)
+- [Master Node](#master-node)
+- [Worker Node](#worker-node)
 
 ## Network Diagram
 
