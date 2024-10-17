@@ -1,0 +1,8 @@
+apiVersion: core/v1
+kind: ConfigMap
+metadata:
+  name: non-conf-data
+data:
+  mysql_usermgmt.sql: |-
+    DROP DATABASE IF EXISTS mydb;
+    CREATE DATABASE mydb; 

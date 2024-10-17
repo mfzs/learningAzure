@@ -1,0 +1,11 @@
+apiVersion: core/v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azure-managed-pvc
+spec:
+  accessMode:
+  - ReadWriteOnce
+  storageClassName: managed-sc #this comes from stoarge-class metadata
+  resources:  
+    requests:
+      storage: 5Gi

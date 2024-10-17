@@ -1,0 +1,10 @@
+apiVersion: core/v1
+kind: Service
+metdata:
+  name: mysql
+spec:
+  selector:
+    app: mysql
+  ports:
+    - port: 3306
+  clusterIP: None  # by using this our service will not be having a new IP and we can use POD IP 

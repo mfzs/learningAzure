@@ -1,0 +1,37 @@
+apiVersion: core/v1
+kind: Deployment
+metadata:
+  name: mysql
+
+spec:
+  replicas: 1
+  selector: #Pod Selector Label
+    matchLabels:
+      app: mysql
+  strategy: Recreate
+  template: #Pod Template
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      conatiners:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: admin
+          ports:
+            - containerPort: 3306
+              name: mysql
+          volumeMounts:
+            - name: mysql-stoarge 
+              mountPath: /var/lib/mysql
+            - name: non-conf-data
+              mountPath: /docker-entrypoint-initdb.d
+      volumes: #Pod spec level resource
+        - name: mysql-stoarge
+          persistentVolumeClaim: 
+            claimName: azure-managed-pvc
+        - name: non-conf-data #ConfigMap name
+          configName:
+            name: non-conf-data 

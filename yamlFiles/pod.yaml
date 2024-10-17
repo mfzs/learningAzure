@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+  labels:
+    app: app
+    tier: backend
+
+spec:
+  containers: #List Item
+    - name: app
+      image: 
+      ports:
+        - containerPort: 8889
+ 
