@@ -16,10 +16,16 @@ spec:
     spec:
       conatiners:
         - name: mysql
-          image: mysql:8.0
+          image: mysql:8.0 
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: admin
+          # env:
+          #   - name: MYSQL_ROOT_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-db-env
+          #         key: dbpassword
           ports:
             - containerPort: 3306
               name: mysql

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata: 
+  name: mysql-db-env
+type: Opaque
+data:
+  dbpassword: <base64 value> 
