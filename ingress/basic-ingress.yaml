@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: my-app
+  annotations:
+    kubernetes.io/ingress-class: "nginx"
+
+spec: 
+  rules:
+  - http:
+    # hots: subdomain.domain.topleveldomain if we have DNS in our cloud provider
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            Name: my-app-service
+            port:
+              name: my-port-name
+              number: 80
+
