@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: private-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/application-gateway-name: <your-app-gateway-name>  # Specify the Application Gateway name
+    appgw.ingress.kubernetes.io/health-probe-path: "/app/health-check"
+    appgw.ingress.kubernetes.io/health-probe-interval: "30"
+    appgw.ingress.kubernetes.io/health-probe-timeout: "5"
+    appgw.ingress.kubernetes.io/health-probe-unhealthy-threshold: "3"
+    appgw.ingress.kubernetes.io/use-private-ip: "true"  # Use private IP for these tenants
+spec:
+  tls:
+    - hosts:
+        - tenant1.domain.com
+        - tenant2.domain.com
+      secretName: <your-secret-name>  # SSL cert for tenant 1 and 2
+  rules:
+    - host: tenant1.domain.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nmyapp-backend-service
+                port:
+                  number: 80
+    - host: tenant2.domain.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nmyapp-backend-service
+                port:
+                  number: 80
