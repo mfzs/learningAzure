@@ -52,3 +52,6 @@ az add group member add \
 --group $groupidName \
 --member-id $userO bjectId
 ```
+
+- **clusterRole:** It is similar to Role but the scope is at cluster level instead of namespace.
+- **clusterRoleBinding:** is used to tie the clusterRole and Subject together.

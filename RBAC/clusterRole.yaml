@@ -1,0 +1,12 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: name-of-the-role
+
+rules:
+- apiGroups: ["core", "extensions"]
+  resources: ["*"]
+  verbs: ["*"] # for read only ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["Jobs", "CronJobs"]
+  verbs: ["*"]
