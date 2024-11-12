@@ -1,0 +1,13 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: name-of-the-role
+  namespace: <namespaceName>
+
+rules:
+- apiGroups: ["core", "extensions"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["batch"]
+  resources: ["Jobs", "CronJobs"]
+  verbs: ["*"]
