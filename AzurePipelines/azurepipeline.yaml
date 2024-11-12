@@ -1,0 +1,26 @@
+trigger:
+- master
+
+variables:
+  tag: ''
+
+stages:
+
+- stage: Build
+  displayName: Building Core App
+
+  jobs:
+  - job:
+    displayName: Core Build JOB
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry:
+        repository:
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tages: |
+          $(tag) 
+          $(Build.Source)

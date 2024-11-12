@@ -24,6 +24,20 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: myapp-backend-service
+                name: myapp-frontend-service
                 port:
                   number: 80
+    - host: tenant3.domain.com
+      http:
+        paths:
+          - path: /backend/
+            pathType: Prefix
+            backend:
+              service:
+                name: myapp-backend-service
+                port:
+                  number: 8889
+
+
+                  .jar :8889/
+                  serverlet -> war -> core.war
