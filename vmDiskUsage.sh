@@ -66,6 +66,3 @@ done
 # Display results after processing all VMs
 echo "Disk Usage Report:"
 cat "$RESULTS_FILE"
-
-
-
